@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         ClassLoader loader = Main.class.getClassLoader();
-        Scanner scanner = new Scanner(new File("src/main/resources/database.csv");
+        Scanner scanner = new Scanner(new File("src/main/resources/database.csv"));
 
         Pipe<String> pipe = new Pipe<String>();
 
