@@ -1,0 +1,331 @@
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 35px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font-family: optima, sans-serif;
+  font-size: 17px;
+  z-index: 0;
+  padding-top: 15px;
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  float: left;
+  margin-right: 25px;
+}
+
+/* Sort by categories and rating*/
+
+.categories-select {
+  width: 100%;
+  height: 110px;
+}
+
+.ratings,
+.categories {
+  width: 100%;
+  height: 20px;
+  float: left;
+}
+.ratings li,
+.categories li {
+  margin-right: 250px;
+  list-style-type: none;
+  margin: 5px;
+  display: inline;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+
+.categories-select a {
+  padding: 3px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+.catSelected {
+  background-color: darkgreen;
+}
+
+/* Navigation size */
+
+.nav-bar {
+  width: 1840px;
+  height: 100px;
+  padding-top: 25px;
+  padding-left: 35px;
+}
+
+.menu {
+  float: right;
+  margin-top: 2px;
+}
+.menu li {
+  margin-right: 250px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.nav-links {
+  margin-right: 6vh;
+}
+
+/* Search bar in navigation */
+form {
+  display: flex;
+  float: right;
+  width: 250px;
+  border: solid lightgray 1px;
+  border-radius: 15px;
+}
+form.searchBar button {
+  float: left;
+  background: transparent;
+  border-right: none;
+  cursor: pointer;
+  float: right;
+  padding: 6px 10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+form.searchBar input[type="text"] {
+  padding: 6px;
+  font-size: 100%;
+  border: none;
+  float: right;
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+form.searchBar::after {
+  clear: both;
+}
+
+/* Main location and description */
+
+.locations-div {
+  height: 500px;
+  margin: auto;
+  padding-top: 1%;
+  background-color: white;
+  border: 2px solid white;
+}
+
+.main-divs {
+  display: inline-flex;
+  margin-top: 50px;
+  height: 577px;
+  /* float: left; */
+  width: 1853px;
+}
+
+.main-location,
+.main-location-data {
+  margin: 10px;
+  background-color: lightgray;
+  width: 900px;
+  height: 550px;
+  padding: 25px;
+}
+
+.main-location {
+  margin-left: 35px;
+}
+
+.main-location-data {
+  background-color: #80c348;
+  border-radius: 15px;
+}
+
+.main-location-title {
+  font-size: 35px;
+  float: left;
+  color: white;
+  font-weight: bold;
+}
+.main-location-description {
+  font-size: 25px;
+  float: left;
+  color: white;
+  margin-top: 50px;
+  padding: 5px;
+  text-align: justify;
+}
+
+.main-location-rating {
+  color: white;
+  font-size: 22px;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 2px;
+  margin: 5px;
+  margin-top: 320px;
+  font-weight: bolder;
+}
+
+.main-categories li {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 52px;
+  margin-left: -35px;
+  padding: 50px;
+  display: inline;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+.main-view-more-bttn {
+  background-color: rgb(55, 53, 53);
+  float: right;
+  margin-top: -44px;
+  padding: 50px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.main-view-more-bttn button {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* ///////////////////////////// */
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.locations-container {
+}
+
+.card {
+  margin: auto;
+  padding: 1%;
+}
+
+.card-website {
+  border: 2px solid black;
+  background-color: lightgreen;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 2px;
+  margin: 5px;
+  margin-top: 290px;
+}
+.card-website a {
+  font-size: medium;
+  color: black;
+}
+.card-name {
+}
+.card-mk_name {
+}
+.card-category {
+}
+.card-description {
+}
+.card-rating {
+}
+.card-review_count {
+}
+.card-phone {
+}
+.card-picture {
+}
+
+.map {
+  height: 300px;
+  width: 400px;
+}
+
+/* Settings Button top right of nav bar */
+/*
+.settings-dropdown {
+  float: right;
+   position: relative;
+  z-index: 2;
+}
+.dropbtn {
+  margin-top: 1.5px;
+  background-color: lightgray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: gray;
+}
+
+.dropdown-content {
+  display: none;
+  margin-top: 25px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {
+  display: block;
+}
+*/
