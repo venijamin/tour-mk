@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIANS Project</title>
+    <link rel="stylesheet" href="homeStyle.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+      <div class="nav-bar">        
+        <div class="nav-inside-bar">        
+          <span class="logo">Tσυɾ-MK</span>
+          <form class="searchBar"  th:method="get" th:action="@{/places}">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <input class="input" type="text" placeholder="Search..." name="searchString">
+          </form>
+
+          <ul class="menu">
+            <li><a class="nav-links" href="/places">Places</a></li>
+            <li><a class="nav-links" href="/about-us">About us</a></li>
+          </ul>
+          <!-- <div class="settings-dropdown">
+            <button onclick="dropDown()" class="dropbtn">≡</button>
+            <div id="settingsDropdown" class="dropdown-content">
+              <a href="#">Mode</a>
+              <a href="#">User Settings</a>
+              <a href="#">Help?</a>
+            </div>
+           </div>-->
+        </div>
+      </div>
+        <div class="categories-select">
+          <ul class="categories">
+            <span>Search by category:</span>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Museums</a></li>
+            <li><a href="">Parks</a></li>
+            <li><a href="">Tourist attraction</a></li>
+          </ul>
+          <ul class="ratings">
+            <span>Search by rating:</span>
+            <li><a href="">3 stars</a></li>
+            <li><a href="">3.5 stars</a></li>
+            <li><a href="">4 stars</a></li>
+            <li><a href="">4.5 stars</a></li>
+            <li><a href="">5 stars</a></li>
+          </ul>
+        </div>
+        <div class="main-divs">
+          <div class="main-location"></div>
+          <div id="main-location-data" class="main-location-data"></div>
+        </div>
+      
+      </div>
+      <!-- <div id="locations-container" class="locations-container"> -->
+        <div class="row">
+          <div class="column">
+            <h2>Matka</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNY-5TQ3M1_a8daGSCn8alFlSPilBF3n8sRPJcE=w408-h306-k-no">
+          </div>
+          
+          <div class="column">
+            <h2>Most</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPAGAkzhHeYsdSqPKGDsps-2k8Rz-5EkHVB3imU=w408-h306-k-no">
+          </div>
+          
+          <div class="column">
+            <h2>idk?</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipOrCPfVgJ_p2LWzyfhuB1VdOoGpFKK7dAwcZcEa=w408-h272-k-no">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <h2>Matka</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNY-5TQ3M1_a8daGSCn8alFlSPilBF3n8sRPJcE=w408-h306-k-no">
+          </div>
+          
+          <div class="column">
+            <h2>Most</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPAGAkzhHeYsdSqPKGDsps-2k8Rz-5EkHVB3imU=w408-h306-k-no">
+          </div>
+          
+          <div class="column">
+            <h2>idk?</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipOrCPfVgJ_p2LWzyfhuB1VdOoGpFKK7dAwcZcEa=w408-h272-k-no">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <h2>Matka</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNY-5TQ3M1_a8daGSCn8alFlSPilBF3n8sRPJcE=w408-h306-k-no">
+          </div>
+          
+          <div class="column">
+            <h2>Most</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPAGAkzhHeYsdSqPKGDsps-2k8Rz-5EkHVB3imU=w408-h306-k-no">
+          </div>
+          
+          <div class="column">
+            <h2>idk?</h2>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipOrCPfVgJ_p2LWzyfhuB1VdOoGpFKK7dAwcZcEa=w408-h272-k-no">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="/homeScript.js"></script>
+</html>
