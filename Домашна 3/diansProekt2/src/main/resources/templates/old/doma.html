@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/%22%3E" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIANS Project</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div class="site-div">
+      <div class="nav-bar">
+        <div class="nav-inside-bar">
+          <span class="logo">Tσυɾ-MK</span>
+          <form class="searchBar"  th:method="get" th:action="@{/places}">
+            <input
+              id="search"
+              name="searchString"
+              type="text"
+              class="input"
+              placeholder="Search..."
+            />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+
+          <div class="settings-dropdown">
+            <button onclick="dropDown()" class="dropbtn">≡</button>
+            <div id="settingsDropdown" class="dropdown-content">
+              <a href="#">Mode</a>
+              <a href="#">User Settings</a>
+              <a href="#">Help?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="locations-div">
+        <!-- <div class="categorie"> -->
+        <!-- <span><center>Select categories:</center></span> -->
+        <div class="categories-select">
+          <a href="">Our recommendation</a>
+          <a href="">Museums</a>
+          <a href="">Parks</a>
+          <a href="">Tourist attraction</a>
+        </div>
+        <!-- </div> -->
+        <br />
+        <br />
+        <br />
+        <br />
+        <div id="locations-container" class="locations-container"></div>
+      </div>
+    </div>
+    <!-- <iframe
+      width="600"
+      height="450"
+      style="border: 0"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.openstreetmap.org/#map=14/42.2191/22.0079"
+    >
+    </iframe> -->
+  </body>
+  <script src="script.js"></script>
+</html>

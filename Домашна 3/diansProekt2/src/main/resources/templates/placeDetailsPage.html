@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIANS Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    
+    <link rel="stylesheet" href="/placeDetailsStyle.css" />
+
+
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="nav-inside-bar">
+        <span class="logo">Tσυɾ-MK</span>
+        <form class="searchBar"  th:method="get" th:action="@{/places}">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <input
+            class="input"
+            type="text"
+            placeholder="Search..."
+            name="search"
+          />
+        </form>
+        <button id="dark-mode-button" onclick="toggleDarkMode()">GO DARK MODE</button>
+        <ul class="menu">
+          <li><a class="nav-links" th:href="'/places'">Places</a></li>
+          <li><a class="nav-links" th:href="'/about-us'">About us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-divs">
+      <div class="main-background">
+        <img id="location-img" class="location-img" th:src="${place.getImg()}"
+        style="object-fit: cover;width: 100%; height: 420px;"/>
+      </div>
+      <div id="location-description" class="location-data">
+        <div class="location-title" th:text="${place.getName()}"></div>
+        <div class="location-title-mk" th:text="${place.getMkName()}"></div>
+        <div class="location-description" th:text="${place.getDescription()} != 'none'? ${place.getDescription()} : '' " ></div>
+        <div class="categories">
+        <ul>
+          <li th:text="${place.getCategory()}"></li>
+        </ul>
+        </div>
+        <div class="location-rating" th:text="'Rating: '+ ${place.getRating()}"></div>
+        <span style="color: black" th:text="'Out of total  '+ ${place.getReviewCount()}">
+        </span>
+      </div>
+    </div>
+    <div class="contact-description">
+      <div class="contact-info"> Contact information </div>
+      <a th:href="${place.getWebsite()} != 'none' ? 'https://'+${place.getWebsite()} : ''">
+      <div class="website-link" th:text="'Website: ' + ${place.getWebsite()}" th:style="${place.getWebsite()} != 'none' ? 'color:blue' : 'color:black'"></div>
+      </a>
+      <div class="telephone-numb" th:text="'Phone: '+ ${place.getPhone()}"></div>
+      <div class="map-description"
+           th:text="'On the map you can see all the places near ' + ${place.getName()} +
+           ' that you can visit as well. Click on the location on the map to see the directions on how to get there.' ">
+      </div>
+      </div>
+      <div  class="second-background">
+        <div id="location-map" class="location-map"></div>
+      </div>
+</div>
+    </div>
+  </body>
+
+
+  <script th:inline="javascript">
+    var lat = [[${place.getLat()}]];
+    var lon = [[${place.getLon()}]];
+    var map = L.map('location-map').setView([lat, lon], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: `&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>`}).addTo(map);
+
+    var marker = L.marker([lat, lon]).addTo(map);
+    var nameText = [[${place.getName()}]];
+    var mkNameText = [[${place.getMkName()}]];
+    marker.bindPopup(`<b>${nameText}</b><br>${mkNameText}`).openPopup();
+  </script>
+
+<script src="/placeDetailsScript.js"></script>
+
+</html>

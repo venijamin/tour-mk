@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIANS Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <!-- //////////////////// -->
+  
+  <link rel="stylesheet" href="/placesStyle.css" />
+  <script src="/placesScript.js"></script>
+
+  </head>
+  <body>
+    <div class="nav-bar">        
+      <div class="nav-inside-bar">        
+        <span class="logo">Tσυɾ-MK</span>
+        <form class="searchBar"  th:method="get" th:action="@{/places}">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <input class="input" type="text" placeholder="Search..." name="searchString" th:value="${searchString}">
+        </form>
+
+        <button id="dark-mode-button" onclick="toggleDarkMode()">GO DARK MODE</button>
+
+        <ul class="menu">
+          <li><a class="nav-links" href="/places">Places</a></li>
+          <li><a class="nav-links" th:href="'/about-us'">About us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="categories-select">
+      <ul class="categories">
+        <span>Search by category:</span>
+        <li><a href="/places?selectedTag=Museum">Museums</a></li>
+        <li><a href="/places?selectedTag=Park">Parks</a></li>
+        <li><a href="/places?selectedTag=Tourist attraction">Tourist attraction</a></li>
+        <li><a href="/places?selectedTag=Church">Churches</a></li>
+        <li><a href="/places?selectedTag=Lake">Lakes</a></li>
+      </ul>
+      <ul class="ratings">
+        <span>Search by rating:</span>
+        <li><a href="/places?starRating=3">3+ stars</a></li>
+        <li><a href="/places?starRating=3.5">3.5+ stars</a></li>
+        <li><a href="/places?starRating=4">4+ stars</a></li>
+        <li><a href="/places?starRating=4.5">4.5+ stars</a></li>
+      </ul>
+    </div>
+    <h3 th:if="${errorMessage != null}" th:text="${errorMessage}" style="margin-left: 39px"></h3>
+      </div>
+      <div class="column" th:each="place : ${places}">
+        <a th:href="'place/' + ${place.getName()}">
+          <img referrerpolicy="no-referrer" th:src="${place.getImg()}" alt="alt" class="small-img">
+          <div class="inside"><span th:text="${place.getName()}"></span></div>
+        </a>
+      </div>
+  </body>
+</html>
