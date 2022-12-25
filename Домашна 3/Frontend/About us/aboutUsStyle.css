@@ -5,6 +5,20 @@ body {
   padding-top: 15px;
 }
 
+.dark-mode-body {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode-body a {
+  background-color: none;
+  color: white;
+}
+.dark-mode-body .searchBar input {
+  background-color: none;
+  color: #121212;
+}
+
 a {
   text-decoration: none;
   color: black;

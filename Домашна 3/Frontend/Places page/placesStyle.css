@@ -2,8 +2,22 @@ body {
   font-family: optima, sans-serif;
   font-size: 17px;
   z-index: 0;
-  padding-top: 15px;
 }
+
+.dark-mode-body {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode-body a {
+  background-color: none;
+  color: white;
+}
+.dark-mode-body .searchBar input {
+  background-color: none;
+  color: #121212;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -51,10 +65,12 @@ a {
 /* Navigation size */
 
 .nav-bar {
-  width: 1840px;
-  height: 100px;
+  width: 1885px;
+  height: 75px;
   padding-top: 25px;
   padding-left: 35px;
+  background-color: #80c348;
+  /* border-radius: 25px; */
 }
 
 .menu {
@@ -78,7 +94,6 @@ form {
   display: flex;
   float: right;
   width: 250px;
-  border: solid lightgray 1px;
   border-radius: 15px;
 }
 form.searchBar button {
@@ -93,6 +108,9 @@ form.searchBar button {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  background-color: #777;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 form.searchBar input[type="text"] {
@@ -261,7 +279,7 @@ div.desc {
 }
 
 .inside {
-  color: black;
+  /* color: black; */
   display: flex;
   z-index: 1;
   position: relative;
@@ -275,7 +293,7 @@ div.desc {
   border-end-start-radius: 20px;
 
   font-size: 15px;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   text-align: center;
 }
 

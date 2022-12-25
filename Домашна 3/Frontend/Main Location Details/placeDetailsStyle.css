@@ -5,13 +5,28 @@ body {
   z-index: 0;
   padding-top: 15px;
 }
+
+.dark-mode-body {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode-body a {
+  background-color: none;
+  color: white;
+}
+.dark-mode-body .searchBar input {
+  background-color: none;
+  color: #121212;
+}
+
 * {
   box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  /* color: #121212; */
 }
 
 .logo {
@@ -129,7 +144,6 @@ form.searchBar::after {
   height: 200px;
   font-size: 25px;
   float: left;
-  color: black;
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 5px;
@@ -146,23 +160,9 @@ form.searchBar::after {
   margin-top: 320px;
   font-weight: bolder;
 }
-.categories li {
-  list-style-type: none;
-  margin-top: 20px;
-  margin-right: 52px;
-  margin-left: -35px;
-  padding: 50px;
-  display: inline;
-  border: 1px solid lightgray;
-  border-radius: 15px;
-  color: black;
-  background-color: white;
-  padding: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 20px;
-}
 
+.location-rating-total {
+}
 .view-more-bttn {
   background-color: rgb(55, 53, 53);
   float: right;
@@ -248,7 +248,7 @@ form.searchBar::after {
   margin: 10px;
   /* margin-left: px; */
   width: 750px;
-  height: 550px;
+  /* height: 550px; */
   padding: 25px;
   border-radius: 15px;
 }
@@ -257,13 +257,11 @@ form.searchBar::after {
   width: 100%;
   font-size: 40px;
   color: darkgreen;
-  /* font-weight: bold; */
 }
 .link {
   width: 350px;
   font-size: 25px;
   height: 30px;
-  color: black;
   left: 107px;
   top: -30px;
 }
@@ -272,14 +270,12 @@ form.searchBar::after {
   margin-top: 65px;
   font-size: 25px;
   height: 30px;
-  color: black;
 }
 .telephone-numb {
   width: 100%;
   margin-top: 20px;
   font-size: 25px;
   height: 30px;
-  color: black;
 }
 
 .map-description {
@@ -288,28 +284,10 @@ form.searchBar::after {
   height: 200px;
   font-size: 25px;
   float: left;
-  color: black;
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 5px;
   text-align: justify;
-}
-
-.categories li {
-  list-style-type: none;
-  margin-top: 20px;
-  margin-right: 52px;
-  margin-left: -35px;
-  padding: 50px;
-  display: inline;
-  border: 1px solid lightgray;
-  border-radius: 15px;
-  color: black;
-  background-color: white;
-  padding: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 20px;
 }
 
 .view-more-bttn {
