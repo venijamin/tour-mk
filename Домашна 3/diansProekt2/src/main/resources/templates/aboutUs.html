@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIANS Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- //////////////////// -->
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/aboutUsScript.js"></script>
+    <link rel="stylesheet" href="/aboutUsStyle.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="nav-inside-bar">
+        <span class="logo">Tσυɾ-MK</span>
+        <form class="searchBar"  th:method="get" th:action="@{/places}">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <input
+            class="input"
+            type="text"
+            placeholder="Search..."
+            name="search"
+          />
+        </form>
+        <button id="dark-mode-button" onclick="toggleDarkMode()">
+          GO DARK MODE
+        </button>
+
+        <ul class="menu">
+          <li><a class="nav-links" href="/places">Places</a></li>
+          <li><a class="nav-links" th:href="'/about-us'">About us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="green-background">About us</div>
+    <div class="img-us"></div>
+    <div class="description-us-border">
+      <center>
+        <div class="description-us">
+          Description in detail about us. Description in detail about us.
+          Description in detail about us. Description in detail about
+          us.Description in detail about us.
+        </div>
+        <br />
+        <br />
+        <div class="description-us">
+          Description in detail about us. Description in detail about us.
+          Description in detail about us. Description in detail about us.
+          Description in detail about us.
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="contact-numb">Contact us: +389 70 666 136</div>
+        <br />
+        <div class="contact-numb">Follow us on social media</div>
+        <a href="https://twitter.com/bewixamin"
+          ><img class="twitter-logo" src="/images/twitter-logo.png"
+        /></a>
+        <a href="https://www.facebook.com/nikola.pavlov.56"
+          ><img class="facebook-logo" src="/images/facebook-logo.png"
+        /></a>
+        <a href="https://www.instagram.com/borjan.peovski/"
+          ><img class="instagram-logo" src="/images/instagram-logo.png"
+        /></a>
+      </center>
+    </div>
+  </body>
+</html>
