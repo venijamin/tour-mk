@@ -1,0 +1,277 @@
+body {
+  font-family: optima, sans-serif;
+  font-size: 17px;
+  z-index: 0;
+  padding-top: 15px;
+}
+
+.dark-mode-body {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode-body a {
+  background-color: none;
+  color: white;
+}
+.dark-mode-body .searchBar input {
+  background-color: none;
+  color: #121212;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #121212;
+}
+
+.logo {
+  float: left;
+  margin-right: 25px;
+}
+
+/* Sort by categories and rating*/
+
+.categories-select {
+  width: 100%;
+  height: 80px;
+}
+
+.link-dark-mdoe {
+  color: white;
+}
+
+.ratings,
+.categories {
+  width: 100%;
+  height: 20px;
+  float: left;
+}
+.ratings li,
+.categories li {
+  margin-right: 250px;
+  list-style-type: none;
+  margin: 5px;
+  display: inline;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+
+.categories-select a {
+  padding: 3px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+/* Navigation size */
+
+.nav-bar {
+  width: 1840px;
+  height: 100px;
+  padding-top: 25px;
+  padding-left: 35px;
+}
+
+.menu {
+  float: right;
+  margin-top: 2px;
+}
+.menu li {
+  margin-right: 250px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.nav-links {
+  margin-right: 6vh;
+}
+
+/* Search bar in navigation */
+form {
+  display: flex;
+  float: right;
+  width: 250px;
+  border: solid lightgray 1px;
+  border-radius: 15px;
+}
+form.searchBar button {
+  float: left;
+  background: transparent;
+  border-right: none;
+  cursor: pointer;
+  float: right;
+  padding: 6px 10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+form.searchBar input[type="text"] {
+  padding: 6px;
+  font-size: 100%;
+  border: none;
+  float: right;
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+form.searchBar::after {
+  clear: both;
+}
+
+/* Main location and description */
+
+.our-recommendations {
+  text-align: center;
+  color: #80c348;
+  text-decoration: underline;
+}
+
+.main-divs {
+  display: inline-flex;
+  height: 577px;
+  width: 1853px;
+  margin: 25px;
+}
+
+.main-location {
+  margin: 10px;
+  right: -10%;
+  background-color: #777;
+  width: 75%;
+  height: 550px;
+  /* padding: 16px; */
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.main-location {
+  margin-left: 35px;
+}
+
+.carousell-card {
+  height: 550px;
+  width: 75%;
+  background-color: red;
+}
+/* ///////////////////////////// */
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.main-description-formation {
+  margin: auto;
+  padding: 1%;
+}
+/* /////////////////////////////////////// */
+
+.fixed-location-name {
+  padding-left: 45px;
+}
+
+.column {
+  width: 620px;
+  height: 590px;
+  float: left;
+  padding: 100px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#small-img {
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  border: solid 2px black;
+}
+
+.card-location-name {
+  color: #121212;
+  display: flex;
+  z-index: 1;
+  position: relative;
+  margin-top: -40px;
+  margin-left: 20px;
+  padding-left: 30px;
+  width: 100px;
+  border: solid 1px black;
+  border-radius: 20px;
+
+  background-color: lightgray;
+}
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  height: 500px;
+  margin: auto;
+}
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
