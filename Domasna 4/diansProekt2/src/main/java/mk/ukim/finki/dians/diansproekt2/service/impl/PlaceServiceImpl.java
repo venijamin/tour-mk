@@ -30,9 +30,7 @@ public class PlaceServiceImpl implements PlaceService {
     @Override
     public List<Place> findAllByNameLikeAndCategoryLikeAndStarRatingGreaterThanEqual(String name, String category, Float rating) {
 
-        //for empty searches
-        if(name != null && name.equals( ""))
-            name = null;
+        name = "%" + name + "%";
 
         if(name != null && category != null && rating != null)
             return placeRepository.findAllByNameLikeAndCategoryLikeAndRatingGreaterThanEqual(name, category, rating);
