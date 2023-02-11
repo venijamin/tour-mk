@@ -31,19 +31,19 @@ public class PlaceServiceImpl implements PlaceService {
     public List<Place> findAllByNameLikeAndCategoryLikeAndStarRatingGreaterThanEqual(String name, String category, Float rating) {
 
         if(name != null && category != null && rating != null)
-            return placeRepository.findAllByNameLikeAndCategoryLikeAndStarRatingGreaterThanEqual(name, category, rating);
+            return placeRepository.findAllByNameLikeAndCategoryLikeAndRatingGreaterThanEqual(name, category, rating);
         else if(name != null && category == null && rating != null)
-            return placeRepository.findAllByNameLikeAndStarRatingGreaterThanEqual(name, rating);
+            return placeRepository.findAllByNameLikeAndRatingGreaterThanEqual(name, rating);
         else if(name != null && category != null && rating == null)
             return placeRepository.findAllByNameLikeAndCategoryLike(name, category);
         else if(name != null && category == null && rating == null)
             return placeRepository.findAllByNameLike(name);
         else if(category != null && rating != null)
-            return placeRepository.findAllByCategoryLikeAndStarRatingGreaterThanEqual(category, rating);
+            return placeRepository.findAllByCategoryLikeAndRatingGreaterThanEqual(category, rating);
         else if(category != null && rating == null)
             return placeRepository.findAllByCategoryLike(category);
         else if(category == null && rating != null)
-            return placeRepository.findAllByStarRatingGreaterThanEqual(rating);
+            return placeRepository.findAllByRatingGreaterThanEqual(rating);
 
         return placeRepository.findAll();
     }

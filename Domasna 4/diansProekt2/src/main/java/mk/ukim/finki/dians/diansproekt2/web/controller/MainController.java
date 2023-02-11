@@ -49,7 +49,7 @@ public class MainController {
 
         if(starRating != null && !starRating.equals("")){
             float sR = (float)Float.parseFloat(starRating);
-            placesToShow.removeIf(x -> x.getStarRating() < sR);
+            placesToShow.removeIf(x -> x.getRating() < sR);
         }
         if(placesToShow.isEmpty())
             model.addAttribute("errorMessage", "No places with that name found.");

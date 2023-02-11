@@ -15,7 +15,7 @@ public class Place {
     String category;
     @Column(length = 3000)
     String description;
-    String rating;
+    Float rating;
     String reviewCount;
     String phone;
     String website;
@@ -27,11 +27,4 @@ public class Place {
         return name;
     }
 
-    public float getStarRating(){
-        //System.out.println( (float)Float.parseFloat(rating) );
-        if(!rating.equals("none"))
-            return (float)Float.parseFloat(rating);
-        else
-            return 0;
-    }
 }
