@@ -31,7 +31,7 @@ public class MainController {
                                 @RequestParam(required = false) String selectedTag,
                                 @RequestParam(required = false) Float starRating, Model model){
 
-        if(searchString.equals( ""))
+        if(searchString != null && searchString.equals( ""))
             searchString = null;
         model.addAttribute("searchString", searchString);
         model.addAttribute("selectedTag", selectedTag);
