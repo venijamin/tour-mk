@@ -36,17 +36,14 @@ public class MainController {
 
         List<Place> placesToShow = placeService.listAll();
 
-        //add filter for searchString and selectedTag
         if(searchString != null && searchString != ""){
             placesToShow.removeIf( x -> (!x.getName().toLowerCase().contains(searchString.toLowerCase()) && !x.getMkName().toLowerCase().contains(searchString.toLowerCase()) )
                     || (x.getMkName().equals("none") && searchString.toLowerCase().equals("none")) );
         }
-
         if(selectedTag != null && selectedTag != ""){
             placesToShow.removeIf(x -> x.getCategory() == null || x.getCategory() == "" ||
                     !x.getCategory().toLowerCase().contains(selectedTag.toLowerCase()));
         }
-
         if(starRating != null && !starRating.equals("")){
             float sR = (float)Float.parseFloat(starRating);
             placesToShow.removeIf(x -> x.getRating() < sR);
