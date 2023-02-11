@@ -36,17 +36,17 @@ public class PlaceServiceImpl implements PlaceService {
             category = "%" + category + "%";
 
         if(name != null && category != null && rating != null)
-            return placeRepository.findAllByNameLikeAndCategoryLikeAndRatingGreaterThanEqual(name, category, rating);
+            return placeRepository.findAllByNameIgnoreCaseLikeAndCategoryIgnoreCaseLikeAndRatingGreaterThanEqual(name, category, rating);
         else if(name != null && category == null && rating != null)
-            return placeRepository.findAllByNameLikeAndRatingGreaterThanEqual(name, rating);
+            return placeRepository.findAllByNameIgnoreCaseLikeAndRatingGreaterThanEqual(name, rating);
         else if(name != null && category != null && rating == null)
-            return placeRepository.findAllByNameLikeAndCategoryLike(name, category);
+            return placeRepository.findAllByNameIgnoreCaseLikeAndCategoryIgnoreCaseLike(name, category);
         else if(name != null && category == null && rating == null)
-            return placeRepository.findAllByNameLike(name);
+            return placeRepository.findAllByNameIgnoreCaseLike(name);
         else if(category != null && rating != null)
-            return placeRepository.findAllByCategoryLikeAndRatingGreaterThanEqual(category, rating);
+            return placeRepository.findAllByCategoryIgnoreCaseLikeAndRatingGreaterThanEqual(category, rating);
         else if(category != null && rating == null)
-            return placeRepository.findAllByCategoryLike(category);
+            return placeRepository.findAllByCategoryIgnoreCaseLike(category);
         else if(category == null && rating != null)
             return placeRepository.findAllByRatingGreaterThanEqual(rating);
 

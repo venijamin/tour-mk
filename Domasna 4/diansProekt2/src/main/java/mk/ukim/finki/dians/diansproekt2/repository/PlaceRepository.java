@@ -8,11 +8,11 @@ import java.util.List;
 
 @Repository
 public interface PlaceRepository extends JpaRepository<Place, String> {
-    List<Place> findAllByNameLikeAndCategoryLikeAndRatingGreaterThanEqual(String name, String category, Float rating);
-    List<Place> findAllByNameLikeAndRatingGreaterThanEqual(String name, Float rating);
-    List<Place> findAllByCategoryLikeAndRatingGreaterThanEqual(String category, Float rating);
-    List<Place> findAllByNameLikeAndCategoryLike(String name, String category);
-    List<Place> findAllByNameLike(String name);
-    List<Place> findAllByCategoryLike(String category);
+    List<Place> findAllByNameIgnoreCaseLikeAndCategoryIgnoreCaseLikeAndRatingGreaterThanEqual(String name, String category, Float rating);
+    List<Place> findAllByNameIgnoreCaseLikeAndRatingGreaterThanEqual(String name, Float rating);
+    List<Place> findAllByCategoryIgnoreCaseLikeAndRatingGreaterThanEqual(String category, Float rating);
+    List<Place> findAllByNameIgnoreCaseLikeAndCategoryIgnoreCaseLike(String name, String category);
+    List<Place> findAllByNameIgnoreCaseLike(String name);
+    List<Place> findAllByCategoryIgnoreCaseLike(String category);
     List<Place> findAllByRatingGreaterThanEqual(Float rating);
 }
