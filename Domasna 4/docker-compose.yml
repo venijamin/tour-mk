@@ -3,7 +3,7 @@ services:
     build:
       context: diansProekt2
       dockerfile: Dockerfile
-    image: idisetaj/back-end
+    image: borjan2/idisetaj:backend
     environment: 
       DB_URL: jdbc:postgresql://db:5432/places
       DB_USERNAME: postgres
@@ -20,7 +20,7 @@ services:
     build:
       context: Databaza
       dockerfile: Dockerfile
-    image: idisetaj/database
+    image: borjan2/idisetaj:database
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: cacko312
