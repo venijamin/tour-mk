@@ -1,0 +1,37 @@
+services:
+  back-end:
+    build:
+      context: diansProekt2
+      dockerfile: Dockerfile
+    image: borjan2/idisetaj:backend
+    environment: 
+      DB_URL: jdbc:postgresql://db:5432/places
+      DB_USERNAME: postgres
+      DB_PASSWORD: cacko312
+    expose:
+      - "9090"
+    ports:
+      - "9090:9090"
+    networks: 
+      - places
+    depends_on:
+      - db
+  db:
+    build:
+      context: Databaza
+      dockerfile: Dockerfile
+    image: borjan2/idisetaj:database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: cacko312
+      POSTGRES_DB: places
+    expose:
+      - "5432"
+    ports:
+      - 5432:5432
+    networks:
+      - places
+    command: -p 5432
+    container_name: springboot-postgresql
+networks:
+  places:
