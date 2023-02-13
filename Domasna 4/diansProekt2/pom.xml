@@ -74,6 +74,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>idi-setaj-docker</finalName>
     </build>
 
 </project>
